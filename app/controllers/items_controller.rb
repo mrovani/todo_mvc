@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :toggle]
 
   # GET /items
   # GET /items.json
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to @list, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -58,15 +59,21 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to @item.list, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  def toggle
+    @item.update_attribute(:completed, !@item.completed)
+    redirect_to @item.list, notice: 'Item was completed'
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = current_user.lists.find(params[:id]).items.find(params[:id])
+      @item = current_user.lists.find(params[:list_id]).items.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

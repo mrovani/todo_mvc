@@ -1,0 +1,11 @@
+#list_items {
+  .item {
+    &.completed {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.btn-primary {
+  color: white;
+}

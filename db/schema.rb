@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20171207230927) do
   create_table "items", force: :cascade do |t|
     t.string "description"
     t.boolean "completed"
-    t.integer "lists_id"
+    t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lists_id"], name: "index_items_on_lists_id"
+    t.index ["list_id"], name: "index_items_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
