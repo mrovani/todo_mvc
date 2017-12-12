@@ -1,0 +1,8 @@
+
+<!-- set link options to default of empty -->
+<% link_options ||= {} %>
+
+<!-- set path of the nav item to "active" -->
+<li class='<%= "active" if current_page? path %>'>
+  <%= link_to text, path, link_options %>
+</li>
