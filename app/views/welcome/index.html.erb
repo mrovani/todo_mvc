@@ -1,9 +1,18 @@
-<h1>Our To-Do List Homepage</h1>
-<% if user_signed_in? %>
-  <p>Let's start adding lists and items.</p>
+<div class="jumbotron">
+  <div class="container">
 
-<% else %>
-  <p> Come build to-do lists with us. <%= link_to "Sign up now", new_user_registration_path %>
-  </p>
+    <h1>Welcome to listMaker!</h1>
 
-<% end %>
+    <h2>A free to-do list app to help keep you organized.</h2>
+
+    <% if user_signed_in? %>
+    <p>Create a new list or add items to an existing list.</p>
+
+    <% else %>
+    <p> <%= link_to "Sign up now", new_user_registration_path, class:"btn btn-lg btn-success" %>
+    </p>
+
+    <% end %>
+  </div>
+
+</div>
