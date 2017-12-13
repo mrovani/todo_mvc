@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoMvc</title>
+    <title>listMaker</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Lato: 400|Montserrat+Alternates: 300, 400, 500i' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,16 +18,17 @@
               <span class="sr-only">Toggle navigation</span>Menu<i class="fa fa-bars"></i>
           </button>
 
-          <a class="navbar-brand <%= link_to 'listMaker', 'root_path' %></a>
+          <%= link_to 'linkMaker', root_path, class: "navbar-brand" %>
+
     </div>
 
-        <ul class="nav navbar-nav">
+
+
+        <ul class="nav navbar-nav navbar-right">
+
           <%= render 'nav_link', text: 'Home', path: root_path %>
           <%= render 'nav_link', text: 'New List', path: new_list_path %>
           <%= render 'nav_link', text: 'My Lists', path: lists_path %>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
 
           <% if user_signed_in?  %>
             <%= render 'nav_link', text: "Signed in as #{current_user.email}", path: edit_user_registration_path %>
@@ -41,11 +43,12 @@
       </div>
 
     </nav>
-    <p id="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-<div class="container">
+
+<div class="container mainContent">
       <%= yield %>
+      <p id="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
 </div>
 

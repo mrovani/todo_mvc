@@ -18,6 +18,12 @@ gem 'jquery-rails'
 # Use Bootstrap Sass as our front-end framework
 gem 'bootstrap-sass', '~> 3.3.7'
 
+# Use TinyMCE Editor for our blogs
+gem 'tinymce-rails'
+
+# Use Google Fonts
+gem 'google-webfonts-rails'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

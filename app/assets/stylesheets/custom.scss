@@ -2,12 +2,13 @@
 @import "bootstrap";
 @import "_variables.scss";
 
+// Global Styling
 body {
   height: 100vh;
   width: 100vw;
-  background: #000;
-  padding-top: 60px;
-  font-family: verdana, arial, helvetica, sans-serif;
+  background: $bgColor;
+  padding-top: 175px;
+  font-family: 'Lato', helvetica, sans-serif;
   font-size: 20px;
 }
 
@@ -27,70 +28,40 @@ text-area {
   margin-bottom: 10px;
 }
 
-.jumbotron {
-  background: #000;
+h1, h2, h3, h4, h5, h6 {
+
+
 }
 
-.container{
-  width: 100%;
-  background-color: #000;
-  text-align: center;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
-
-  }
-
-  .jumbotron {
-    h1 {
-    font-size: 3em;
-    color: $primaryFontColor;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-}
-
-
-    h2 {
-    font-size: 1.2em;
-    color: lighten($primaryFontColor, 10);
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: normal;
-
-    }
-
-
-  p {
-    font-size: 1.1em;
-    line-height: 1.7em;
-  }
-
+// Navbar styling
 .navbar-inverse{
   .navbar-brand{
-    color: $primaryFontColor;
+    color: $secondaryColor;
+    font-family: "Montserrat Alternates", helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 2.5em;
     &:hover,
     &:focus,
     &:active,
     &.active {
-            color: darken($primaryFontColor, 10%);
+            background-color: $bgColorHighlight;
           }
 
   }
 }
-
 
 .navbar-inverse{
   .navbar-nav{
     li{
       a {
     color: #fff;
+    font-family: "Lato", helvetica, sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+
     &:hover,
     &:focus {
-    color: $primaryFontColor;
+    color: lighten($primaryFontColor, 10);
     outline: solid $primaryFontColor 1px;
         }
       }
@@ -127,12 +98,71 @@ text-area {
       .active{
         a {
   border-radius: 3px;
-  outline: solid #4A6AFE 1px;
+
       }
     }
   }
 }
 
+// Main content styling
+
+.jumbotron {
+  background: $bgColor;
+}
+
+.mainContent{
+  width: 100%;
+  background-color: $bgColor;
+  text-align: center;
+  }
+
+
+
+  .btn-success {
+    background-color: $secondaryColor;
+    border-color: $secondaryColor;
+    color: #ffffff;
+    font-family: "Lato", helvetica, sans-serif;
+    letter-spacing: 0.25em;
+  }
+
+
+
+
+  .jumbotron {
+    h1 {
+    font-size: 3em;
+    font-family: "Lato";
+    font-weight: 400;
+    color: $primaryFontColor;
+    letter-spacing: 0.075em;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  #logo {
+    font-family: "Montserrat Alternates", helvetica, sans-serif;
+    font-weight: 300;
+    letter-spacing: normal;
+  }
+}
+
+
+    h2 {
+    font-size: 1.2em;
+    color: lighten($primaryFontColor, 40);
+    letter-spacing: 0.15em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+
+    }
+
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+  }
 
 
 
