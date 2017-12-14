@@ -6,7 +6,7 @@
     <h2>A free to-do list creator and productivity blog to help you stay organized.</h2>
 
     <% if user_signed_in? %>
-    <p>Login to start getting organized, or share your best organizing tips!</p>
+    <p id="loginMessage">Start a new list or share your best organizing tips!</p>
 
     <% else %>
     <p> <%= link_to "Sign up now!", new_user_registration_path, class:"btn btn-success btn-lg" %>

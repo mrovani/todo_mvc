@@ -18,20 +18,32 @@
               <span class="sr-only">Toggle navigation</span>Menu<i class="fa fa-bars"></i>
           </button>
 
-          <%= link_to 'linkMaker', root_path, class: "navbar-brand" %>
+          <%= link_to 'listMaker', root_path, class: "navbar-brand" %>
 
     </div>
-
-
-
         <ul class="nav navbar-nav navbar-right">
+          <!-- Lists Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lists <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <%= render 'nav_link', text: 'New List', path: new_list_path %>
+              <%= render 'nav_link', text: 'My List', path: lists_path %>
+            </ul>
+          </li>
 
-          <%= render 'nav_link', text: 'Home', path: root_path %>
-          <%= render 'nav_link', text: 'New List', path: new_list_path %>
-          <%= render 'nav_link', text: 'My Lists', path: lists_path %>
+          <!-- Blogs Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blogs <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <%= render 'nav_link', text: 'Blogs', path: articles_path %>
+              <%= render 'nav_link', text: 'New Blog', path: new_article_path %>
+            </ul>
+          </li>
+
+
 
           <% if user_signed_in?  %>
-            <%= render 'nav_link', text: "Signed in as #{current_user.email}", path: edit_user_registration_path %>
+            <%= render 'nav_link', text: "Signed in as #{current_user.firstname}  #{current_user.lastname[0]}.", path: profile_path %>
             <%= render 'nav_link', text: 'Log Out', path: destroy_user_session_path, link_options: {method: :delete} %>
 
           <% else  %>

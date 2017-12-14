@@ -3,9 +3,13 @@
     <div class='col-md-12'>
       <div class='page-header'>
         <h1 class='articleTitle'>
-          <%= article.title %><br>
+          <% if current_page?(articles_path) %>
+            <%= link_to article.title, article %><br>
+            <% else %>
+              <%= article.title %>
+            <% end %>
           <small>
-            by <%= article.user.email %> ·
+            by <%= article.user.firstname %> <%= article.user.lastname[0] %>. ·
             <%= time_ago_in_words(article.created_at) %> ago
           </small>
         </h1>
