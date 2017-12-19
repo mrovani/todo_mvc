@@ -22,7 +22,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'tinymce-rails'
 
 # Use Google Fonts
-gem 'google-webfonts-rails'
+# gem 'google-webfonts-rails'
 
 
 # Use Puma as the app server

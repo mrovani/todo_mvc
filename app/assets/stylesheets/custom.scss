@@ -10,7 +10,7 @@ body {
   padding-top: 175px;
   font-family: 'Lato', helvetica, sans-serif;
   font-size: 16px;
-  color: $secondaryColor;
+  color: white;
 }
 
 section {
@@ -22,27 +22,27 @@ text-area {
   color: black;
 };
 
-.center {
-  text-align: center;
+// .center {
+//   text-align: center;
+// }
+//
+// .center h1 {
+//   margin-bottom: 10px;
+// }
+//
+h1 {
+  color: $primaryFontColor;
 }
 
-.center h1 {
-  margin-bottom: 10px;
+h2 {
+  color: white;
 }
 
-h1, h2, h3, h4, h5, h6 {
-}
-
-.field {
-  placeholder {
-    color: black;
-  }
-}
 
 // Navbar styling
 .navbar-inverse{
   .navbar-brand{
-    color: $secondaryColor;
+    color: $primaryFontColor;
     font-family: "Montserrat Alternates", helvetica, sans-serif;
     font-weight: 300;
     font-size: 2.5em;
@@ -51,8 +51,12 @@ h1, h2, h3, h4, h5, h6 {
     &:active,
     &.active {
             background-color: $bgColorHighlight;
+            color: $primaryFontColor;
           }
 
+  }
+    span{
+      color: $secondaryColor;
   }
 }
 
@@ -71,8 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
     &:hover,
     &:focus {
-    color: lighten($primaryFontColor, 10);
-    outline: solid $primaryFontColor 1px;
+    color: $secondaryColor;
         }
       }
     }
@@ -84,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
       .active{
         a {
   border-radius: 0;
-  color: $primaryFontColor;
+  color: $secondaryColor;
 
         }
       }
@@ -96,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
     .navbar-nav{
         .active{
           a:focus {
-      color: $primaryFontColor;
+      color: $secondaryColor;
 
       }
     }
@@ -129,14 +132,17 @@ h1, h2, h3, h4, h5, h6 {
 
 
   .btn-success {
+    margin-top: 25px;
     background-color: $secondaryColor;
     border-color: $secondaryColor;
     color: #ffffff;
     font-family: "Lato", helvetica, sans-serif;
     letter-spacing: 0.25em;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $primaryFontColor;
+    }
   }
-
-
 
 
   .jumbotron {
@@ -150,11 +156,17 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
 
-  #logo {
+  #propsLogo {
     font-family: "Montserrat Alternates", helvetica, sans-serif;
     font-weight: 300;
     letter-spacing: normal;
+    color: $primaryFontColor;
   }
+      .logo{
+        color: $secondaryColor;
+
+      }
+
 }
 
 #loginMessage {
@@ -167,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 
     h2 {
     font-size: 1.2em;
-    color: lighten($primaryFontColor, 40);
+    color: white;
     letter-spacing: 0.15em;
     margin-bottom: 30px;
     text-align: center;
@@ -181,6 +193,24 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.7em;
   }
 
+  .signUp {
+    width: 30%;
+    background-color: #fff;
+    h2 {
+      color: $primaryFontColor;
+      text-align: center;
+    }
+    em{
+      color: $secondaryColor;
+    }
+    input {
+      background-color: $secondaryColor;
+
+    }
+
+
+  }
+
 
 
   #list_items {
@@ -188,5 +218,11 @@ h1, h2, h3, h4, h5, h6 {
       &.completed {
         text-decoration: line-through;
       }
+    }
+  }
+
+  .field {
+    placeholder {
+      color: black;
     }
   }

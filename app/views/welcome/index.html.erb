@@ -1,15 +1,15 @@
 <div class="jumbotron">
   <div class="container mainContent">
 
-    <h1>Welcome to <span id='logo'>listMaker</span>!</h1>
 
-    <h2>A free to-do list creator and productivity blog to help you stay organized.</h2>
 
     <% if user_signed_in? %>
     <p id="loginMessage">Start a new list or share your best organizing tips!</p>
 
     <% else %>
-    <p> <%= link_to "Sign up now!", new_user_registration_path, class:"btn btn-success btn-lg" %>
+    <h1>Welcome to <span id='propsLogo'><span class='logo'>list</span>Maker!</span></h1>
+    <h2>A to-do list creator and productivity blog to help you stay organized.</h2>
+    <p> <%= link_to "Get Started · It's free!", new_user_registration_path, class:"btn btn-success btn-lg" %>
     </p>
 
     <% end %>
