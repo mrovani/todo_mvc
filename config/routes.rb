@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index', as: :admin
   get 'admin/promote/:id', to: 'admin#promote', as: :promote
 
-  resources :articles
+  resources :articles do
+    member do
+      put :clap
+    end
+  end
+
 
   resources :lists do
       resources :items do

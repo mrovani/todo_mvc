@@ -1,9 +1,31 @@
 
 
-<h1>Articles</h1>
+
+<div class="container articlesMain">
+  <div class="row">
+    <div class="class col-md-12">
+
+      <h1>Articles</h1>
+
+      <%= form_tag articles_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+        <%= text_field_tag(
+            :search,
+            params[:search],
+            placeholder: "Search Articles",
+            class: "form-control"
+        ) %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<%= render @articles %>
+
+<%= link_to 'New Article', new_article_path %>
+<%= link_to 'Back', :back %>
 
 
-  <%= render @articles %>
 
 
 <!-- <table>
@@ -30,6 +52,3 @@
 </table>
 
 <br> -->
-
-<%= link_to 'New Article', new_article_path %>
-<%= link_to 'Back', :back %>

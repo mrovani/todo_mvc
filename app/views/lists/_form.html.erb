@@ -12,13 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :list_name %>
+    <%= form.text_field :name, id: :list_name, placeholder: 'List Name' %>
   </div>
 
-
-
-  <div class="actions">
+  <div class="actions btn btn-success btn-sm">
     <%= form.submit %>
   </div>
 <% end %>

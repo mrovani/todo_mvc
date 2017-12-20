@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.search(params[:search])
   end
 
   # GET /articles/1
@@ -65,6 +65,14 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def clap
+    @article = Article.find(params[:id])
+    @article.claps += 1
+    @article.save
+    redirect_to @article
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

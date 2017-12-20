@@ -1,25 +1,39 @@
-<div class='container'>
+<div class='container articlesMain'>
   <div class='row'>
     <div class='col-md-12'>
       <div class='page-header'>
         <h1 class='articleTitle'>
+          <span class="badge"><%= article.claps %></span>
           <% if current_page?(articles_path) %>
             <%= link_to article.title, article %><br>
             <% else %>
               <%= article.title %>
             <% end %>
           <small>
-            by <%= article.user.firstname %> <%= article.user.lastname[0] %>. ·
+            by <%= article.user.firstname %> <%= article.user.lastname[0] %> ·
             <%= time_ago_in_words(article.created_at) %> ago
           </small>
         </h1>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container articleContent">
+  <% if current_page?(articles_path) %>
   <div class='row'>
-    <div class='col-md-12'>
+    <div class='col-md-12 sidebar-box'>
   <%= article.content.html_safe %>
+  <h5 class="read-more"><a href="<%= article_path(article) %>" class="button">Read More</a></h5>
     </div>
   </div>
+    <% else %>
+
+      <div class='col-md-12 sidebar-box'>
+    <%= article.content.html_safe %>
+      </div>
+
+    <%= link_to "Clap <span class='badge'>#{article.claps}</span>".html_safe, clap_article_path(article), method: :put, class: 'btn btn-primary' %>
+    <% end %>
+
 </div>

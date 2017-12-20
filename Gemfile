@@ -21,6 +21,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 # Use TinyMCE Editor for our blogs
 gem 'tinymce-rails'
 
+gem 'faker'
+
 # Use Google Fonts
 # gem 'google-webfonts-rails'
 

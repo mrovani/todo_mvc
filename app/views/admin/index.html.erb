@@ -1,19 +1,32 @@
-<h1>All Users</h1>
+<div class="adminScreen container">
+  <div class="row">
+    <div class="col-md-12">
+      Users <span class='badge'><%= @users.count %></span>
+      Articles <span class='badge'><%= @article_count %></span>
+      Lists <span class='badge'><%= @list_count %></span>
+      Items <span class='badge'><%= @item_count %></span>
 
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <%= user.lastname %> &nbsp;<%= user.firstname %> |
-        <%= user.email %> |
-        Articles: <%= user.articles.count %> |
-        Lists: <%= user.lists.count %> |
-        Sign-ins: <%= user.sign_in_count %>
-        <span title="<%= user.last_sign_in_at || "NA" %>"> Last Sign-in: <%= user.last_sign_in_at ? time_ago_in_words(user.last_sign_in_at): "NA" %></span> |
-        <% unless user.is_admin %>
-          <%= link_to "Promote", promote_path(user) %>
-          <% else %>
-            <strong>Admin</strong>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+      <h1>All Users</h1>
+
+        <ul>
+          <% @users.each do |user| %>
+            <li>
+              <%= user.lastname %> &nbsp;<%= user.firstname %> |
+              <%= user.email %> |
+              Articles: <%= user.articles.count %> |
+              Lists: <%= user.lists.count %> |
+              Sign-ins: <%= user.sign_in_count %>
+              <span title="<%= user.last_sign_in_at || "NA" %>"> Last Sign-in: <%= user.last_sign_in_at ? time_ago_in_words(user.last_sign_in_at): "NA" %></span> |
+              <% unless user.is_admin %>
+                <%= link_to "Promote", promote_path(user) %>
+                <% else %>
+                  <strong>Admin</strong>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+
+    </div>
+  </div>
+
+</div>
