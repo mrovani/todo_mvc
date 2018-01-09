@@ -58,15 +58,10 @@ class ItemsController < ApplicationController
   # DELETE /items/1.json
   def destroy
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to @item.list, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   def toggle
     @item.update_attribute(:completed, !@item.completed)
-    redirect_to @item.list, notice: 'Item was completed'
   end
 
 

@@ -18,3 +18,31 @@
   /* "transparent" only works here because == rgba(0,0,0,0) */
   background-image: linear-gradient(to bottom, transparent, $bgColor);
 }
+
+#newArticlePage {
+  text-align: left;
+  padding-bottom: 20px;
+  font-size: 1.75em;
+
+}
+
+.articleTitle {
+  text-align: left;
+  input{
+    margin-bottom: 10px;
+    padding-right: 30%;
+  }
+}
+
+.articleContent {
+  margin-bottom: 10px;
+}
+
+#submitArticle{
+  input{
+      background-color: $secondaryColor;
+      border-color: $secondaryColor;
+      color: white;
+  }
+
+}

@@ -11,20 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :article_title %>
+  <div id="submitArticle" class="actions pull-right">
+    <%= form.submit %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :article_content, class: 'tinymce', rows: 40, cols: 120 %>
+  <div class="field articleTitle">
+    <%= form.text_field :title, id: :article_title, placeholder: "Title" %>
+  </div>
+
+  <div class="field articleContent">
+    <%= form.text_area :content, id: :article_content, class: 'tinymce', rows: 20, cols: 100 %>
   </div>
 
   <%= tinymce %>
 
 
-  <div class="actions">
+  <div id="submitArticle" class="actions pull-right">
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Back', :back %>

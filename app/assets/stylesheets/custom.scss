@@ -8,7 +8,7 @@ body {
   height: 100vh;
   width: 100vw;
   background: $bgColor;
-  padding-top: 175px;
+  padding-top: 70px;
   font-family: 'Lato', helvetica, sans-serif;
   font-size: 16px;
 }
@@ -27,7 +27,7 @@ label, th, p, h2, {
 }
 
 
-h1 {
+h1, h3 {
   color: $primaryColor;
 }
 
@@ -220,7 +220,8 @@ p {
 
   .checkBox input{
     width: 10%;
-    margin: 0 auto;
+    margin: 2.5% 0%;
+
     }
 
     .rememberMe {
@@ -232,16 +233,66 @@ p {
     background-color: $primaryColor;
     color: white;
     margin-bottom: 10px;
+    letter-spacing: 0.2em;
   }
 
 
+#pw-reset input{
+  @include button-variant($secondaryColor, $bgColor, $secondaryColor);
+  letter-spacing: 0.1em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
 
 
-
+#send-confirmation input{
+  @include button-variant($secondaryColor, $bgColor, $secondaryColor);
+  letter-spacing: 0.1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 .articleContent {
   color: white;
   text-align: left;
+}
+
+.adminScreen {
+  text-align: left;
+  li {
+    a {
+        color: white;
+    }
+
+    font-size: 1.1em;
+    font-family: "Lato", helvetica, sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+    strong{
+      color: $secondaryColor;
+      text-transform: uppercase;
+    }
+  }
+  #userStats {
+    color: white;
+    .badge{
+      background-color: $secondaryColor;
+      margin-right: 15px;
+    }
+  }
+
+
+}
+
+.table {
+  thead {
+    tr {
+      th {
+        color: $primaryColor;
+        text-align: center;
+      }
+    }
+  }
 }
 
 

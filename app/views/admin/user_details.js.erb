@@ -1,0 +1,20 @@
+
+$('#userModal #name').text('<%= @user.firstname %> <%= @user.lastname %>')
+$('#userModal #articles').text('<%= @user.articles.count %>')
+$('#userModal #lists').text('<%= @user.lists.count %>')
+$('#userModal #items').text('<%= @user.item_count %>')
+$('#userModal #is_admin').text('<%= @user.is_admin ? "Yes": "No" %>')
+$('#userModal #last_login').text('<%= last_login_text(@user) %>')
+
+$('#userModal #lock_button').attr('href', '<%= admin_lock_user_path(@user) %>')
+$('#userModal #unlock_button').attr('href', '<%= admin_unlock_user_path(@user) %>')
+
+<% if @user.access_locked? %>
+  $('#userModal #lock_button').hide()
+  $('#userModal #unlock_button').show()
+<% else %>
+  $('#userModal #unlock_button').hide()
+  $('#userModal #lock_button').show()
+<% end %>
+
+$('#userModal').modal('show')

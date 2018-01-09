@@ -11,8 +11,22 @@ class AdminController < ApplicationController
   def promote
     @user = User.find(params[:id])
     @user.update_attribute(:is_admin, true)
-    redirect_to admin_path
   end
+
+  def user_details
+    @user = User.find(params[:id])
+  end
+
+  def lock_user
+    @user = User.find(params[:id])
+    @user.lock_access!
+  end
+
+  def unlock_user
+    @user = User.find(params[:id])
+    @user.unlock_access!
+  end
+
 
   private
     def is_admin

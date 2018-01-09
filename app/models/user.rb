@@ -8,5 +8,13 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
 
   validates :firstname, presence: true
-  validates :lastname, presence: true 
+  validates :lastname, presence: true
+
+  def item_count
+    item_count = 0
+    lists.each do |list|
+      item_count += list.items.count
+    end
+    return item_count
+  end
 end

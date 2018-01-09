@@ -70,7 +70,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.claps += 1
     @article.save
-    redirect_to @article
   end
 
 

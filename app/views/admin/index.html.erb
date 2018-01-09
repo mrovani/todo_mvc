@@ -1,6 +1,7 @@
 <div class="adminScreen container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" id="userStats">
+      <h1>User Stats</h1>
       Users <span class='badge'><%= @users.count %></span>
       Articles <span class='badge'><%= @article_count %></span>
       Lists <span class='badge'><%= @list_count %></span>
@@ -11,22 +12,64 @@
         <ul>
           <% @users.each do |user| %>
             <li>
-              <%= user.lastname %> &nbsp;<%= user.firstname %> |
-              <%= user.email %> |
-              Articles: <%= user.articles.count %> |
-              Lists: <%= user.lists.count %> |
-              Sign-ins: <%= user.sign_in_count %>
-              <span title="<%= user.last_sign_in_at || "NA" %>"> Last Sign-in: <%= user.last_sign_in_at ? time_ago_in_words(user.last_sign_in_at): "NA" %></span> |
+              <%= link_to (user.firstname + " " + user.lastname), user_details_path(user), remote: true %> ·
+
               <% unless user.is_admin %>
-                <%= link_to "Promote", promote_path(user) %>
+
+              <!-- Adding 'remote: true to line below tells the view to expect an AJAX request' -->
+                <%= link_to "Promote", promote_path(user), remote: true, id: "promote-#{user.id}" %>
+
                 <% else %>
                   <strong>Admin</strong>
               <% end %>
             </li>
           <% end %>
         </ul>
-
     </div>
   </div>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="userModalLabel">User Data</h3>
+      </div>
+
+      <div class="modal-body container-fluid">
+        <h4 class="text-center" id="name">Firstname Lastname</h4>
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Articles</th>
+                <th>Lists</th>
+                <th>Items</th>
+                <th>Admin?</th>
+                <th>Last Login</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td id="email">test@test.com</td>
+                <td id="articles">8</td>
+                <td id="lists">5</td>
+                <td id="items">15</td>
+                <td id="is_admin">No</td>
+                <td id="last_login">4 days ago</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <a id='lock_button' href="#" data-remote="true"><button type="button" class="btn btn-danger">Lock</button></a>
+        <a id='unlock_button' href="#" data-remote="true"><button type="button" class="btn btn-warning">Unlock</button></a>
+      </div>
+    </div>
+  </div>
 </div>

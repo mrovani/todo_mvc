@@ -4,13 +4,12 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, placeholder: 'Email', autofocus: true %>
   </div>
 
-  <div class="actions">
+  <div class="actions" id="pw-reset">
     <%= f.submit "Send me reset password instructions" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<!-- <%= render "devise/shared/links" %> -->
