@@ -5,44 +5,46 @@
 
   <div class="field">
     <%= f.text_field :firstname, placeholder: 'First Name', autofocus: true%>
+  </div><br>
+
+  <div class="field">
     <%= f.text_field :lastname, placeholder: 'Last Name'%>
   </div><br>
 
   <div class="field">
-    <%= f.label :email %><br />
     <%= f.email_field :email%>
-  </div>
+  </div><br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="instructions">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, placeholder: 'Password', autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+      <em id="pw-length"><%= @minimum_password_length %> characters minimum</em>
+    <% end %><br>
+    <i class="instructions">Leave blank if you don't want to change it.</i><br />
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "off" %>
+  </div><br>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, placeholder: "Current Password", autocomplete: "off" %><br>
+      <i class="instructions">We need your current password to confirm your changes.</i><br />
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "btn btn-default btn-sm" %>
   </div>
 <% end %>
+<br>
 
-<h3>Cancel my account</h3>
+<h3>Unhappy? Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<%= button_to "Cancel", registration_path(resource_name), class: "btn btn-success btn-sm", data: { confirm: "Are you sure?" }, method: :delete %>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: "btn btn-primary btn-sm dark-button text-center text-uppercase" %>

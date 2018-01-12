@@ -1,36 +1,42 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="profileHeader">
-        Profile for <%= @user.firstname %> <%= @user.lastname %>
-        <small><%= link_to "edit your profile", edit_user_registration_path %></small>
-      </h1>
+      <h2 class="profileHeader">
+        Profile for <%= @user.firstname %> <%= @user.lastname %><br>
+        <small><%= link_to "edit your profile", edit_user_registration_path, class: 'edit' %></small>
+      </h2>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container profile">
   <div class="row">
-    <div class="col-md-6">
-      <h3>My Lists<small> <%= link_to 'New List', new_list_path %></small></h3>
-      <ul>
+    <div class="col-md-12">
+      <h3>My Lists</h3>
+      <ul class="list-items">
         <% @lists.each do |list| %>
           <li>
             <%= link_to list.name, edit_list_path(list) %>
           </li>
         <% end %>
       </ul>
-
+      <small> <%= link_to 'New List', new_list_path, class: 'btn btn-default btn-xs' %></small>
     </div>
-    <div class="col-md-6">
-      <h3>My Blogs <small> <%= link_to 'New Article', new_article_path %></small></h3>
-      <ul>
+
+     <div class="col-md-12">
+        <hr>
+     </div>
+
+    <div class="col-md-12">
+      <h3>My Blogs</h3>
+      <ul class="list-items">
         <% @articles.each do |article| %>
           <li>
             <%= link_to article.title, edit_article_path(article) %>
           </li>
         <% end %>
       </ul>
+      <small> <%= link_to 'New Blog', new_article_path, class: 'btn btn-default btn-xs' %></small>
     </div>
   </div>
 </div>

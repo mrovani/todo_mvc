@@ -90,7 +90,6 @@ li {
   }
 }
 
-
 .navbar-inverse{
   .navbar-nav{
     .active{
@@ -142,6 +141,21 @@ li {
   text-transform: uppercase;
 }
 
+.btn-warning {
+  @include button-variant(white, #00cc00, #00cc00);
+  margin-top: 25px;
+  font-family: "Lato", helvetica, sans-serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+}
+
+.dark-button {
+  @include button-variant($secondaryColor, $bgColor, $secondaryColor);
+  letter-spacing: 0.1em;
+  margin-top: 25px;
+  // margin-bottom: 10px;
+}
 
 .jumbotron {
   h1 {
@@ -207,9 +221,10 @@ p {
     background-color: white;
     border: solid 1px $primaryColor;
     width: 40%;
+    margin-bottom: 5px;
   }
 
-  .action input {
+  .actions input {
     background-color: $secondaryColor;
     border: solid 1px $secondaryColor;
     color: white;
@@ -219,13 +234,14 @@ p {
 }
 
   .checkBox input{
-    width: 10%;
+    width: 3%;
     margin: 2.5% 0%;
 
     }
 
     .rememberMe {
     color: $primaryColor;
+    letter-spacing: 0.075em;
 
   }
 
@@ -237,7 +253,7 @@ p {
   }
 
 
-#pw-reset input{
+.dark-button input{
   @include button-variant($secondaryColor, $bgColor, $secondaryColor);
   letter-spacing: 0.1em;
   margin-top: 25px;
@@ -245,7 +261,15 @@ p {
 }
 
 
-#send-confirmation input{
+
+#notice {
+  color: $secondaryColor;
+  margin-top: 10px;
+  letter-spacing: 0.075rem;
+}
+
+
+.send-confirmation input{
   @include button-variant($secondaryColor, $bgColor, $secondaryColor);
   letter-spacing: 0.1em;
   margin-top: 10px;
@@ -257,6 +281,8 @@ p {
   text-align: left;
 }
 
+
+// Styling for the admin page
 .adminScreen {
   text-align: left;
   li {
@@ -273,6 +299,7 @@ p {
       text-transform: uppercase;
     }
   }
+
   #userStats {
     color: white;
     .badge{
@@ -280,9 +307,8 @@ p {
       margin-right: 15px;
     }
   }
-
-
 }
+
 
 .table {
   thead {
@@ -295,9 +321,21 @@ p {
   }
 }
 
+// Styling for the lists page
+#listTable {
+  margin: 0 auto;
+  width: 25%;
+}
 
+#listName > a{
+  color: $secondaryColor;
+  margin-left: 5%;
+}
 
-#list_items {
+.list-items {
+  list-style: none;
+  padding: 0;
+
   .item {
     &.completed {
       text-decoration: line-through;
@@ -305,8 +343,53 @@ p {
   }
 }
 
+.list-items {
+  li {
+    a {
+    margin-left: 2px;
+
+}
+}
+}
+
+#modifyItem {
+  width: 100%;
+}
+
+.glyphicon {
+  font-size: 1.5vw;
+  margin-top: 2px;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
 .field {
   placeholder {
     color: black;
   }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(238, 111, 46, 0), rgba(238, 111, 46, 0.75), rgba(238, 111, 46, 0));
+    margin-top: 40px;
+}
+
+.profile {
+  h3 {
+    color: $secondaryColor;
+  }
+}
+
+.edit {
+    color: $secondaryColor;
+  }
+
+.instructions {
+    color: $secondaryColor;
+  }
+
+#pw-length {
+  color: $secondaryColor;
 }

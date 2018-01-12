@@ -2,12 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import '_variables.scss';
+@import '_mixins.scss';
 
 .sidebar-box {
   max-height: 120px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 20px;
 }
+
 .sidebar-box .read-more {
   position: absolute;
   bottom: 0;
@@ -17,6 +20,10 @@
   margin: 0;
   /* "transparent" only works here because == rgba(0,0,0,0) */
   background-image: linear-gradient(to bottom, transparent, $bgColor);
+}
+
+.read-more a {
+  color: $secondaryColor;
 }
 
 #newArticlePage {
@@ -38,11 +45,18 @@
   margin-bottom: 10px;
 }
 
-#submitArticle{
+.submitArticle{
   input{
-      background-color: $secondaryColor;
-      border-color: $secondaryColor;
-      color: white;
+    @include button-variant(white, $secondaryColor, $secondaryColor);
+    font-family: "Lato", helvetica, sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
+}
+
+.badge.claps {
+  background-color: $secondaryColor;
+  font-size: 0.5em;
 
 }

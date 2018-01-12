@@ -3,7 +3,7 @@
     <div class='col-md-12'>
       <div class='page-header'>
         <h1 class='articleTitle'>
-          <span class="badge claps"><%= article.claps %></span>
+
           <% if current_page?(articles_path) %>
             <%= link_to article.title, article %><br>
             <% else %>
@@ -13,6 +13,7 @@
             by <%= article.user.firstname %> <%= article.user.lastname[0] %> ·
             <%= time_ago_in_words(article.created_at) %> ago
           </small>
+
         </h1>
       </div>
     </div>
@@ -33,7 +34,7 @@
     <%= article.content.html_safe %>
       </div>
 
-    <%= link_to "Clap <span class='badge claps'>#{article.claps}</span>".html_safe, clap_article_path(article), method: :put, class: 'btn btn-primary', remote: true %>
+    <%= link_to "Claps <span class='badge claps'>#{article.claps}</span>".html_safe, clap_article_path(article), method: :put, class: 'btn btn-primary', remote: true %>
     <% end %>
 
 </div>
