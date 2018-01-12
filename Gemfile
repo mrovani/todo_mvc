@@ -24,7 +24,7 @@ gem 'tinymce-rails'
 gem 'faker'
 
 # Use Google Fonts
-# gem 'google-webfonts-rails'
+gem 'google-webfonts-rails'
 
 
 # Use Puma as the app server
