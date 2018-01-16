@@ -69,7 +69,7 @@ end
 
 #use the PostGreSQL to deploy to Heroku
 group :production do
-  gem 'pg', '0.11'
+  gem 'pg','0.11'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
