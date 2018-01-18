@@ -4,11 +4,11 @@
   font-style: normal;
   font-weight: 300;
   src: font-url('montserrat-alternates-v9-latin-300.eot'); /* IE9 Compat Modes */
-  // src: font-url('montserrat-alternates-v9-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  //      font-url('montserrat-alternates-v9-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-  //      font-url('montserrat-alternates-v9-latin-300.woff') format('woff'), /* Modern Browsers */
-  //      font-url('montserrat-alternates-v9-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-  //      font-url('montserrat-alternates-v9-latin-300.svg#MontserratAlternates') format('svg'); /* Legacy iOS */
+  src: font-url('montserrat-alternates-v9-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       font-url('montserrat-alternates-v9-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       font-url('montserrat-alternates-v9-latin-300.woff') format('woff'), /* Modern Browsers */
+       font-url('montserrat-alternates-v9-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       font-url('montserrat-alternates-v9-latin-300.svg#MontserratAlternates') format('svg'); /* Legacy iOS */
 }
 /* montserrat-alternates-regular - latin */
 @font-face {
